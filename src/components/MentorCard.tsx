@@ -36,8 +36,8 @@ const MentorCard = ({ mentor }: MentorCardProps) => {
   };
 
   return (
-    <Card className="group hover:shadow-hover transition-all duration-300 cursor-pointer bg-gradient-card">
-      <CardContent className="p-6">
+    <Card className="group hover:shadow-floating transition-all duration-500 cursor-pointer glass-morphism border-0 hover-lift overflow-hidden">
+      <CardContent className="p-8 relative">
         <div className="flex items-start space-x-4">
           {/* Avatar & Verification */}
           <div className="relative">
@@ -108,7 +108,19 @@ const MentorCard = ({ mentor }: MentorCardProps) => {
                 <span className="text-sm text-muted-foreground">/hour</span>
               </div>
               
-              <Button size="sm" className="bg-gradient-primary hover:opacity-90">
+              <Button 
+                size="sm" 
+                className="bg-gradient-primary hover:opacity-90 shadow-glow hover:shadow-neon transition-all duration-300 hover:scale-105"
+                onClick={() => {
+                  // Add toast notification
+                  import("@/hooks/use-toast").then(({ toast }) => {
+                    toast({
+                      title: "Connection Initiated",
+                      description: `Sent a connection request to ${mentor.name}`,
+                    });
+                  });
+                }}
+              >
                 Connect
               </Button>
             </div>

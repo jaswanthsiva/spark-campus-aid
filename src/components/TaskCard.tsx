@@ -33,8 +33,8 @@ const TaskCard = ({ task }: TaskCardProps) => {
   };
 
   return (
-    <Card className="group hover:shadow-hover transition-all duration-300 cursor-pointer">
-      <CardContent className="p-6">
+    <Card className="group hover:shadow-floating transition-all duration-500 cursor-pointer glass-morphism border-0 hover-lift overflow-hidden">
+      <CardContent className="p-8 relative">
         {/* Header */}
         <div className="flex items-start justify-between mb-4">
           <div className="flex-1 min-w-0">
@@ -90,7 +90,20 @@ const TaskCard = ({ task }: TaskCardProps) => {
             {task.category}
           </Badge>
           
-          <Button size="sm" variant="outline" className="hover:bg-primary hover:text-primary-foreground">
+          <Button 
+            size="sm" 
+            variant="outline" 
+            className="hover:bg-gradient-primary hover:text-primary-foreground border-primary/30 hover:border-transparent transition-all duration-300 hover:scale-105 hover:shadow-glow"
+            onClick={() => {
+              // Add toast notification
+              import("@/hooks/use-toast").then(({ toast }) => {
+                toast({
+                  title: "Application Submitted",
+                  description: `Applied for: ${task.title}`,
+                });
+              });
+            }}
+          >
             Apply Now
           </Button>
         </div>

@@ -69,14 +69,19 @@ export default {
       },
       backgroundImage: {
         "gradient-primary": "var(--gradient-primary)",
-        "gradient-success": "var(--gradient-success)",
+        "gradient-secondary": "var(--gradient-secondary)",
+        "gradient-accent": "var(--gradient-accent)",
         "gradient-hero": "var(--gradient-hero)",
         "gradient-card": "var(--gradient-card)",
+        "gradient-glass": "var(--gradient-glass)",
+        "gradient-text": "var(--gradient-text)",
       },
       boxShadow: {
         "card": "var(--shadow-card)",
         "hover": "var(--shadow-hover)",
         "glow": "var(--shadow-glow)",
+        "neon": "var(--shadow-neon)",
+        "floating": "var(--shadow-floating)",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -104,6 +109,12 @@ export default {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "slide-in": "slideIn 0.5s ease-out",
+        "fade-in": "fadeIn 0.5s ease-out",
+        "scale-in": "scaleIn 0.3s ease-out",
+        "pulse-glow": "pulse-glow 2s infinite",
+        "float": "float 3s ease-in-out infinite",
+        "shimmer": "shimmer 2s infinite",
       },
     },
   },
